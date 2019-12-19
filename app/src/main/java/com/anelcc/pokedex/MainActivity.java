@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Log.d(TAG, "Error: " + response.errorBody());
                 }
-
             }
 
             @Override
