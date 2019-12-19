@@ -56,7 +56,7 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.
     }
 
     public void update(ArrayList<Pokemon> pokemonList){
-        this.pokemons = pokemonList;
+        pokemons.addAll(pokemonList);
         notifyDataSetChanged();
     }
 
