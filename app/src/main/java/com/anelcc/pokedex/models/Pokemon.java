@@ -2,8 +2,17 @@ package com.anelcc.pokedex.models;
 
 public class Pokemon {
 
-    private String name;
+    private int number;
     private String url;
+    private String name;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public String getName() {
         return name;
@@ -13,11 +22,12 @@ public class Pokemon {
         this.name = name;
     }
 
-    public String getUrl() {
-        return url;
+    public int getNumber() {
+        String[] urlSplit = url.split("/");
+        return Integer.parseInt(urlSplit[urlSplit.length-1]);
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

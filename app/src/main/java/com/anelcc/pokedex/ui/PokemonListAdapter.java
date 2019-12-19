@@ -8,10 +8,9 @@ import android.widget.TextView;
 
 import com.anelcc.pokedex.R;
 import com.anelcc.pokedex.models.Pokemon;
-import com.anelcc.pokedex.models.Pokemons;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,8 +28,15 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.
     }
 
     public void onBindViewHolder(@NonNull PokemonListAdapter.ViewHolder holder, int position) {
-        Pokemon pokemon = pokemons.get(position);
-        holder.pokemonName.setText(pokemon.getName());
+        String imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+pokemons.get(position).getNumber()+".png";
+
+        holder.pokemonName.setText(pokemons.get(position).getName());
+
+        Picasso.with(holder.pokemonImage.getContext()).load(imageUrl)
+                .placeholder(R.drawable.ic_error)
+                .error(R.drawable.ic_loading)
+                .resize(300, 300)
+                .into(holder.pokemonImage);
     }
 
     @Override
