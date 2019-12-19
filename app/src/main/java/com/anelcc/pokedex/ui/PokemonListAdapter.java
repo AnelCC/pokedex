@@ -33,8 +33,8 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.
         holder.pokemonName.setText(pokemons.get(position).getName());
 
         Picasso.with(holder.pokemonImage.getContext()).load(imageUrl)
-                .placeholder(R.drawable.ic_error)
-                .error(R.drawable.ic_loading)
+                .placeholder(R.drawable.ic_loading)
+                .error(R.drawable.ic_error)
                 .resize(300, 300)
                 .into(holder.pokemonImage);
     }
