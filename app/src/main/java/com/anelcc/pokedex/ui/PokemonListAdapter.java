@@ -11,13 +11,13 @@ import com.anelcc.pokedex.models.Pokemon;
 import com.anelcc.pokedex.models.Pokemons;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.ViewHolder> {
     private ArrayList<Pokemon> pokemons;
-
 
     public PokemonListAdapter(){
         pokemons = new ArrayList<>();
@@ -44,8 +44,14 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             pokemonImage = itemView.findViewById(R.id.pokemon_image);
-            pokemonImage = itemView.findViewById(R.id.pokemon_name);
+            pokemonName = itemView.findViewById(R.id.pokemon_name);
 
         }
     }
+
+    public void update(ArrayList<Pokemon> pokemonList){
+        this.pokemons = pokemonList;
+        notifyDataSetChanged();
+    }
+
 }
