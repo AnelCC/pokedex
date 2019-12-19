@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_size_title">12sp</dimen>
+    <dimen name="text_size_title">16sp</dimen>
     <dimen name="xsmall_margin">4dp</dimen>
-    <dimen name="not_width">0dp</dimen>
-    <dimen name="not_height">0dp</dimen>
     <dimen name="small_margin">8dp</dimen>
     <dimen name="small_padding">8dp</dimen>
 </resources>
