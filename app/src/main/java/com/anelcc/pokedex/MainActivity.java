@@ -12,6 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.anelcc.pokedex.models.Pokemon;
 import com.anelcc.pokedex.models.Pokemons;
@@ -91,12 +92,14 @@ public class MainActivity extends AppCompatActivity {
                     pokemonListAdapter.update(pokemonList);
                 } else {
                     Log.d(TAG, "Error: " + response.errorBody());
+                    Toast.makeText(getApplicationContext(), "Somthing is bad, Please try again!", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Pokemons> call, Throwable t) {
                 isLoading = true;
+                Toast.makeText(getApplicationContext(), "Somthing is bad, Please try again!", Toast.LENGTH_LONG).show();
                 Log.d(TAG, "onFailure: " + t.getMessage());
             }
         });
